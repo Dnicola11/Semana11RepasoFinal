@@ -1,25 +1,23 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
+
 const client = require('./client');
 
-class App extends React.Component { 
-
+class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {instrumentos: []};
 	}
-
-	componentDidMount() { 
+	componentDidMount() {
 		client({method: 'GET', path: '/api/instrumentos'}).done(response => {
 			this.setState({instrumentos: response.entity._embedded.instrumentos});
 		});
 	}
-
-	render() { 
+	render() {
 		return (
 			<>
-					<h2>Lista de Instrumentos</h2>
-					<InstrumentoList instrumentos={this.state.instrumentos}/>
+				<h2>Lista de Instrumentos</h2>
+				<InstrumentoList instrumentos={this.state.instrumentos}/>
 			</>
 		)
 	}
@@ -27,7 +25,7 @@ class App extends React.Component {
 
 class InstrumentoList extends React.Component{
 	render() {
-		const instrumentos = this.props.instrumentos.map(intrumento =>
+		const instrumentos = this.props.instrumentos.map(instrumento =>
 			<Instrumento key={instrumento._links.self.href} instrumento={instrumento}/>
 		);
 		return (
@@ -35,8 +33,8 @@ class InstrumentoList extends React.Component{
 				<tbody>
 					<tr>
 						<th>Nombre</th>
-						<th>Categoria</th>
-						<th>Descripcion</th>
+						<th>Categoría</th>
+						<th>Descripción</th>
 					</tr>
 					{instrumentos}
 				</tbody>
@@ -57,7 +55,4 @@ class Instrumento extends React.Component{
 	}
 }
 
-ReactDOM.render(
-	<App />,
-	document.getElementById('react')
-)
+ReactDOM.render(<App />, document.getElementById('react'))
