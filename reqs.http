@@ -1,9 +1,16 @@
-@server = https://fluffy-space-telegram-wr944pqjq64hgg6w-8080.app.github.dev
+@server = https://fuzzy-waffle-ggv9q5rvpxw3w9g-8080.app.github.dev
 ####
 GET {{server}}/api/instrumentos
 ####
-POST {{server}}/api/intrumentos
+POST {{server}}/api/instrumentos
 Content-Type: application/json
 
-{"firstName": "David", "lastName": "Nicola", "description": "Davicho"}
+{"nombre": "Flauta", "categoria": "Viento", "descripcion": "Plastico"}
+#####
+GET {{server}}/api/musicos
+####
+POST {{server}}/api/musicos
+Content-Type: application/json
+
+{"nombre": "Sin Bandera"}
 
