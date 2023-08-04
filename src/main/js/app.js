@@ -18,8 +18,8 @@ class App extends React.Component {
 	render() { 
 		return (
 			<>
-			<h2>Lista de Instrumentos</h2>
-			<InstrumentoList instrumentos={this.state.instrumentos}/>
+					<h2>Lista de Instrumentos</h2>
+					<InstrumentoList instrumentos={this.state.instrumentos}/>
 			</>
 		)
 	}

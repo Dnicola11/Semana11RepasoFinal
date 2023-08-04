@@ -1,8 +1,8 @@
-@server = https://dnicola11-cautious-umbrella-4xp47gvprwrhjx97-8080.app.github.dev
+@server = https://fluffy-space-telegram-wr944pqjq64hgg6w-8080.app.github.dev
 ####
-GET {{server}}/api/employees
+GET {{server}}/api/instrumentos
 ####
-POST {{server}}/api/employees
+POST {{server}}/api/intrumentos
 Content-Type: application/json
 
 {"firstName": "David", "lastName": "Nicola", "description": "Davicho"}
